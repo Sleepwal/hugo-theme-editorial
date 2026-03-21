@@ -1,0 +1,40 @@
+# Chaos Theme Parameters
+
+[page]
+  math = false
+  comments = true
+
+[article]
+  header = true
+
+[sidebar]
+  left = true
+  right = true
+
+[widgets]
+  enabled = true
+  page = ["search", "toc", "categories", "tags"]
+
+[menu]
+  [menu.main]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+[footer]
+  custom = true
+
+[assets]
+  favicon = "favicon.ico"
+
+[opengraph]
+  twitter = true
+
+[params]
+  author = "Chaos Blogger"
+  description = "A Maximalist Chaos Blog"
+  staticDir = "static"
+
+[darkMode]
+  enable = true

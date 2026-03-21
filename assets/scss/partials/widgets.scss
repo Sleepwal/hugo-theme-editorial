@@ -1,0 +1,31 @@
+.widgets {
+    display: flex;
+    flex-direction: column;
+    gap: var(--widget-separation);
+}
+
+.widget {
+    @include card-base;
+    padding: var(--card-padding);
+}
+
+.widget-title {
+    font-family: var(--display-font-family);
+    font-size: 1.5rem;
+    color: var(--card-text-color-main);
+    margin: 0 0 var(--spacing-md) 0;
+    position: relative;
+    padding-left: 16px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 20px;
+        background: linear-gradient(180deg, #d946ef, #6366f1);
+        border-radius: 2px;
+    }
+}

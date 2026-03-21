@@ -1,0 +1,60 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--section-separation);
+
+    &.sticky {
+        position: sticky;
+        top: var(--main-top-padding);
+    }
+}
+
+.left-sidebar {
+    .site-header {
+        @include card-base;
+        padding: var(--card-padding);
+        position: relative;
+        overflow: hidden;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #d946ef, #6366f1, #f472b6, #60a5fa);
+            background-size: 200% 100%;
+            animation: shimmer 6s linear infinite;
+        }
+    }
+
+    .site-avatar {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        margin-bottom: var(--spacing-md);
+        border: 3px solid transparent;
+        background: linear-gradient(var(--card-background), var(--card-background)) padding-box,
+                    linear-gradient(135deg, #d946ef, #6366f1) border-box;
+    }
+
+    .site-name {
+        font-family: var(--display-font-family);
+        font-size: 1.8rem;
+        color: var(--card-text-color-main);
+        margin: 0 0 var(--spacing-sm) 0;
+    }
+
+    .site-description {
+        color: var(--card-text-color-secondary);
+        font-size: 0.95rem;
+        margin: 0;
+    }
+}
+
+.right-sidebar {
+    @include respond(lg) {
+        padding-top: var(--main-top-padding);
+    }
+}

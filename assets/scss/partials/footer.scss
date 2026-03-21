@@ -1,0 +1,20 @@
+.site-footer {
+    @include card-base;
+    padding: var(--card-padding);
+    margin-top: var(--section-separation);
+    text-align: center;
+
+    p {
+        margin: 0;
+        color: var(--card-text-color-secondary);
+        font-size: 0.9rem;
+    }
+
+    a {
+        color: var(--accent-color);
+
+        &:hover {
+            color: #f472b6;
+        }
+    }
+}

@@ -1,0 +1,37 @@
+<div class="article-card">
+    {{ if .Params.image }}
+    <div class="article-card-image">
+        <a href="{{ .RelPermalink }}">
+            <img src="{{ .Params.image }}" alt="{{ .Title }}">
+        </a>
+    </div>
+    {{ end }}
+
+    <div class="article-card-content">
+        <h2 class="article-card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+
+        {{ if .Summary }}
+        <p class="article-card-summary">{{ .Summary | plainify | truncate 160 }}</p>
+        {{ end }}
+
+        <div class="article-card-meta">
+            <span class="article-date">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 02, 2006" }}</time>
+            </span>
+
+            {{ if .Site.Params.article.readingTime }}
+            <span class="article-reading-time">
+                {{ .ReadingTime }} {{ i18n "minutes" }}
+            </span>
+            {{ end }}
+
+            {{ if .Section }}
+            <span class="article-category">
+                <a href="{{ .Section | relLangURL }}">{{ .Section }}</a>
+            </span>
+            {{ end }}
+        </div>
+    </div>
+</div>

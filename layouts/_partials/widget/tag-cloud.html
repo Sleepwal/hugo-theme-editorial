@@ -1,0 +1,10 @@
+<div class="widget widget--tags">
+    <h3 class="widget-title">{{ i18n "tags" }}</h3>
+    <div class="tag-cloud">
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.RelPermalink }}" class="tag" style="font-size: {{ add 0.8 (mul (div (float .Count) (float 10)) 0.5) }}rem;">
+            {{ .Page.Title }}
+        </a>
+        {{ end }}
+    </div>
+</div>

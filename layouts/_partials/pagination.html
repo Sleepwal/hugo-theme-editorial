@@ -1,0 +1,27 @@
+<nav class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="page-item prev">
+        <span class="page-link">←</span>
+    </a>
+    {{ else }}
+    <span class="page-item disabled">
+        <span class="page-link">←</span>
+    </span>
+    {{ end }}
+
+    {{ range .Paginator.Pagers }}
+    <a href="{{ .URL }}" class="page-item {{ if eq .PageNumber $.Paginator.PageNumber }}active{{ end }}">
+        <span class="page-link">{{ .PageNumber }}</span>
+    </a>
+    {{ end }}
+
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="page-item next">
+        <span class="page-link">→</span>
+    </a>
+    {{ else }}
+    <span class="page-item disabled">
+        <span class="page-link">→</span>
+    </span>
+    {{ end }}
+</nav>

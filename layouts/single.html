@@ -1,0 +1,22 @@
+{{ define "body-class" }}
+    article-page
+{{ end }}
+
+{{ define "main" }}
+    <div class="article-layout">
+        <div class="article-main">
+            {{ partial "article/article.html" . }}
+        </div>
+        {{ if and .TableOfContents (gt (len .TableOfContents) 100) }}
+        <aside class="article-toc-sidebar sticky">
+            <nav class="toc-nav">
+                <h4 class="toc-title">{{ i18n "tableOfContents" }}</h4>
+                {{ .TableOfContents | safeHTML }}
+            </nav>
+        </aside>
+        {{ end }}
+    </div>
+{{ end }}
+
+{{ define "right-sidebar" }}
+{{ end }}

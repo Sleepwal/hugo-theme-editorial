@@ -1,0 +1,24 @@
+.main {
+    padding-top: var(--main-top-padding);
+    padding-bottom: var(--main-top-padding);
+}
+
+#toggle-menu {
+    display: none;
+
+    @include respond(md) {
+        display: none !important;
+    }
+}
+
+#main-menu {
+    display: none;
+
+    @include respond(md) {
+        display: flex;
+    }
+}
+
+#main-menu.show {
+    display: flex;
+}

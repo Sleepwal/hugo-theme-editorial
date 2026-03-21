@@ -1,0 +1,190 @@
+/*
+*   Maximalist Chaos Theme - Global Variables
+*   Bold colors, dramatic gradients, layered effects
+*/
+:root {
+    --main-top-padding: 35px;
+
+    @include respond(xl) {
+        --main-top-padding: 60px;
+    }
+
+    --body-background: #0f0a1a;
+    --gradient-mesh: linear-gradient(135deg, #1a0a2e 0%, #16213e 50%, #0f3460 100%);
+    --noise-overlay: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+
+    --accent-color: #d946ef;
+    --accent-color-darker: #a855f7;
+    --accent-color-text: #fff;
+    --accent-glow: 0 0 30px rgba(217, 70, 239, 0.5), 0 0 60px rgba(217, 70, 239, 0.3);
+
+    --body-text-color: #e2e8f0;
+    --text-gradient: linear-gradient(135deg, #f472b6, #c084fc, #60a5fa);
+
+    --tag-border-radius: 4px;
+
+    --section-separation: 40px;
+
+    &[data-scheme="dark"] {
+        --body-background: #0f0a1a;
+        --accent-color: #d946ef;
+        --accent-color-darker: #a855f7;
+        --accent-color-text: #fff;
+        --body-text-color: #e2e8f0;
+    }
+}
+
+:root {
+    --sys-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --display-font-family: "Abril Fatface", var(--sys-font-family), serif;
+    --base-font-family: "Source Serif 4", Georgia, var(--sys-font-family), serif;
+    --code-font-family: "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
+}
+
+:root {
+    --card-background: linear-gradient(145deg, rgba(30, 20, 50, 0.95), rgba(15, 10, 26, 0.98));
+    --card-background-selected: rgba(217, 70, 239, 0.2);
+    --card-glass: rgba(255, 255, 255, 0.05);
+    --card-glass-border: rgba(255, 255, 255, 0.1);
+
+    --card-text-color-main: #f8fafc;
+    --card-text-color-secondary: #cbd5e1;
+    --card-text-color-tertiary: #94a3b8;
+    --card-separator-color: rgba(217, 70, 239, 0.3);
+
+    --card-border-radius: 16px;
+    --card-border: 1px solid rgba(217, 70, 239, 0.3);
+    --card-glow: 0 8px 32px rgba(217, 70, 239, 0.2), 0 0 0 1px rgba(217, 70, 239, 0.1);
+    --card-inset-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+    --card-padding: 28px;
+
+    @include respond(md) {
+        --card-padding: 35px;
+    }
+
+    @include respond(xl) {
+        --card-padding: 42px;
+    }
+
+    --small-card-padding: 28px 24px;
+
+    @include respond(md) {
+        --small-card-padding: 32px 28px;
+    }
+}
+
+:root {
+    --article-font-family: var(--base-font-family);
+    --article-font-size: 1.75rem;
+
+    @include respond(md) {
+        --article-font-size: 1.9rem;
+    }
+
+    --article-line-height: 1.8;
+    --article-heading-font: var(--display-font-family);
+}
+
+:root {
+    --blockquote-border-size: 5px;
+    --blockquote-background-color: rgba(217, 70, 239, 0.1);
+    --blockquote-border-gradient: linear-gradient(180deg, #d946ef, #6366f1);
+    --heading-border-size: 5px;
+    --heading-gradient: linear-gradient(135deg, #f472b6, #c084fc, #60a5fa);
+
+    --alert-note-color: #38bdf8;
+    --alert-note-background: rgba(56, 189, 248, 0.1);
+    --alert-tip-color: #4ade80;
+    --alert-tip-background: rgba(74, 222, 128, 0.1);
+    --alert-important-color: #c084fc;
+    --alert-important-background: rgba(192, 132, 252, 0.1);
+    --alert-warning-color: #fbbf24;
+    --alert-warning-background: rgba(251, 191, 36, 0.1);
+    --alert-caution-color: #f87171;
+    --alert-caution-background: rgba(248, 113, 113, 0.1);
+
+    --link-background-color: 189, 195, 199;
+    --link-background-opacity: 0.5;
+    --link-background-opacity-hover: 0.7;
+
+    --code-background-color: rgba(217, 70, 239, 0.15);
+    --code-text-color: #f0abfc;
+    --code-border: 1px solid rgba(217, 70, 239, 0.3);
+    --code-glow: 0 0 15px rgba(217, 70, 239, 0.2);
+
+    --table-border-color: rgba(217, 70, 239, 0.4);
+    --tr-even-background-color: rgba(217, 70, 239, 0.08);
+
+    --kbd-border-color: rgba(217, 70, 239, 0.5);
+    --kbd-background: rgba(217, 70, 239, 0.1);
+    --kbd-glow: 0 0 10px rgba(217, 70, 239, 0.3);
+}
+
+:root {
+    --shadow-l1-y: 4px;
+    --shadow-l1-blur: 8px;
+    --shadow-l2-y: 10px;
+    --shadow-l2-blur: 20px;
+
+    --shadow-l1: 0px var(--shadow-l1-y) var(--shadow-l1-blur) rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    --shadow-l2: 0px var(--shadow-l2-y) var(--shadow-l2-blur) rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
+    --shadow-l3: 0 20px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(217, 70, 239, 0.15);
+    --shadow-glow: 0 0 40px rgba(217, 70, 239, 0.4);
+    --shadow-float: 0 30px 60px rgba(0, 0, 0, 0.4), 0 0 50px rgba(217, 70, 239, 0.2);
+}
+
+:root {
+    --pre-text-color: #e2e8f0;
+    --pre-background-color: #1e1b4b;
+    --pre-glow: 0 0 20px rgba(217, 70, 239, 0.3);
+}
+
+:root {
+    --menu-icon-separation: 50px;
+    --container-padding: 15px;
+
+    @include respond(md) {
+        --container-padding: 20px;
+    }
+
+    --widget-separation: var(--section-separation);
+
+    --spacing-xs: 5px;
+    --spacing-sm: 10px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+    --spacing-2xl: 30px;
+    --spacing-3xl: 40px;
+
+    --article-image-height: 150px;
+
+    @include respond(md) {
+        --article-image-height: 200px;
+    }
+
+    @include respond(xl) {
+        --article-image-height: 250px;
+    }
+
+    --mermaid-toolbar-btn-bg: rgba(255, 255, 255, 0.95);
+    --mermaid-toolbar-btn-text: #333;
+    --mermaid-modal-bg: rgba(0, 0, 0, 0.95);
+    --mermaid-modal-content-bg: #fff;
+    --mermaid-modal-btn-bg: #fff;
+    --mermaid-modal-btn-hover: #ddd;
+
+    --article-compact-image-size: 50px;
+
+    @include respond(md) {
+        --article-compact-image-size: 60px;
+    }
+
+    --widget-icon-size: 32px;
+
+    --article-tile-width: 250px;
+    --article-tile-height: 150px;
+    --article-tile-overlay-bg: rgba(0, 0, 0, 0.25);
+    --article-tile-text-color: #fff;
+}

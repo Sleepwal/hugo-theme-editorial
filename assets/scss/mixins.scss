@@ -1,0 +1,81 @@
+@mixin transition($properties: all, $duration: 0.3s, $timing: ease) {
+    transition: $properties $duration $timing;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin card-base {
+    background: var(--card-background);
+    backdrop-filter: blur(20px);
+    border-radius: var(--card-border-radius);
+    box-shadow: var(--shadow-l2);
+    overflow: hidden;
+    border: var(--card-border);
+}
+
+@mixin glow-border($color: var(--accent-color)) {
+    border: 1px solid rgba($color, 0.3);
+    box-shadow: 0 0 20px rgba($color, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+@mixin gradient-text {
+    background: linear-gradient(135deg, #f472b6, #c084fc, #60a5fa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@mixin shimmer-animation {
+    background: linear-gradient(90deg, #d946ef, #6366f1, #f472b6, #60a5fa, #d946ef);
+    background-size: 200% 100%;
+    animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 0%;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-8px) rotate(5deg);
+    }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(217, 70, 239, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(217, 70, 239, 0.6);
+    }
+}
+
+@keyframes gradient-flow {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

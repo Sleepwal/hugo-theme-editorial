@@ -1,0 +1,17 @@
+{{ define "main" }}
+    {{ if .Paginator }}
+        {{ range .Paginator.Pages }}
+            {{ partial "article-list/default.html" . }}
+        {{ end }}
+    {{ else }}
+        {{ range .Pages }}
+            {{ partial "article-list/default.html" . }}
+        {{ end }}
+    {{ end }}
+
+    {{- partial "pagination.html" . -}}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "list") }}
+{{ end }}

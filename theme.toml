@@ -1,0 +1,16 @@
+name = "Hugo Theme Editorial"
+license = "MIT"
+licenseurl = "https://github.com/yourusername/hugo-theme-chaos/blob/main/LICENSE"
+description = "Editorial Magazine - A sophisticated Hugo theme with bold typography"
+homepage = "https://github.com/yourusername/hugo-theme-chaos"
+demosite = "https://example.com"
+
+tags = ["blog", "editorial", "magazine", "typography", "clean", "sophisticated"]
+
+features = ["disqus", "opengraph", "widgets", "table of contents", "search"]
+
+min_version = "0.110.0"
+
+[author]
+name = "Editorial Theme Author"
+homepage = "https://example.com"

@@ -1,0 +1,51 @@
+<aside class="left-sidebar sticky">
+    <header class="site-header">
+        {{ if .Site.Params.avatar }}
+        <div class="site-avatar">
+            <img src="{{ .Site.Params.avatar }}" alt="{{ .Site.Params.author }}" class="site-logo">
+        </div>
+        {{ end }}
+
+        <div class="site-meta">
+            <h1 class="site-name">
+                <a href="{{ "/" | relLangURL }}">{{ .Site.Params.author }}</a>
+            </h1>
+            {{ if .Site.Params.description }}
+            <p class="site-description">{{ .Site.Params.description }}</p>
+            {{ end }}
+        </div>
+
+        <div class="site-search">
+            <form action="{{ "search" | relLangURL }}" method="get">
+                <input type="text" name="q" placeholder="{{ i18n "searchPlaceholder" }}" required>
+            </form>
+        </div>
+    </header>
+
+    {{ if .Site.Taxonomies.categories }}
+    <div class="site-categories-section">
+        <h3 class="site-categories-title">{{ i18n "categories" }}</h3>
+        <ul class="site-categories-list">
+            {{ range .Site.Taxonomies.categories.ByCount.Reverse }}
+            <li class="site-category-item">
+                <a href="{{ .Page.RelPermalink }}" class="site-category-link">
+                    <span class="site-category-name">{{ .Page.Title }}</span>
+                    <span class="site-category-count">{{ .Count }}</span>
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    </div>
+    {{ end }}
+
+    {{ if .Site.Taxonomies.tags }}
+    <div class="site-tags-section">
+        <h3 class="site-tags-title">{{ i18n "tags" }}</h3>
+        <div class="site-tags-container">
+            {{ range first 10 .Site.Taxonomies.tags.ByCount.Reverse }}
+            <a href="{{ .Page.RelPermalink }}" class="site-tag">{{ .Page.Title }}</a>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</aside>

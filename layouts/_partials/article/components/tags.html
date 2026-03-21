@@ -1,0 +1,7 @@
+{{ if .Params.tags }}
+<nav class="article-tags">
+    {{ range .Params.tags }}
+    <a href="{{ "tags" | relLangURL }}/{{ . | urlize }}" class="tag">{{ . }}</a>
+    {{ end }}
+</nav>
+{{ end }}

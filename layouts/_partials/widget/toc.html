@@ -1,0 +1,8 @@
+{{ if and .TableOfContents (gt (len .TableOfContents) 100) }}
+<aside class="widget widget--toc">
+    <h3 class="widget-title">{{ i18n "tableOfContents" }}</h3>
+    <nav class="toc-nav">
+        {{ .TableOfContents | safeHTML }}
+    </nav>
+</aside>
+{{ end }}
