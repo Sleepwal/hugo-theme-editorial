@@ -14,12 +14,6 @@
             <p class="site-description">{{ .Site.Params.description }}</p>
             {{ end }}
         </div>
-
-        <div class="site-search">
-            <form action="{{ "search" | relLangURL }}" method="get">
-                <input type="text" name="q" placeholder="{{ i18n "searchPlaceholder" }}" required>
-            </form>
-        </div>
     </header>
 
     {{ if .Site.Taxonomies.categories }}
